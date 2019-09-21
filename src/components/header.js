@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => (
       <ul style={{ listStyle: `none`, marginBottom: '1rem' }}>
           <li><a rel="noopener noreferrer" style={{marginRight: `1rem`}} href={pdf} target="_blank">Resume</a></li>
           <li><a rel="noopener noreferrer" style={{marginRight: `1rem`}} href="https://www.linkedin.com/in/matthewfrucht/" target="_blank">LinkedIn</a></li>
-          <li><a rel="noopener noreferrer" style={{marginRight: `1rem`}} href="https://github.com/matthewfrucht" target="_blank">GitHub</a></li>
+          <li><a rel="noopener noreferrer" style={{marginRight: `1rem`}} href="https://github.com/mfrucht" target="_blank">GitHub</a></li>
       </ul>
       <Line color="	#D0D0D0" />
     </div>
