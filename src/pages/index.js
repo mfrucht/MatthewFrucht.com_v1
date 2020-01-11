@@ -11,7 +11,7 @@ const IndexPage = () => (
       <img src={headshot} draggable="false" id="headshot" alt="Matthew Frucht"/>
       <p className="mainP" style={{lineHeight:`1.6`}}>
         Hi! My name is Matthew Frucht. I'm a junior at Cornell University studying
-        Information Science. This summer, I am working as a research assistant in Dr. Susan Fussell's
+        Information Science. Last summer, I worked as a research assistant in Dr. Susan Fussell's
         Communication and Collaborative Technologies Lab here at Cornell.
         <br/>
         <br/>
