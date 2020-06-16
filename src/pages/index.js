@@ -18,9 +18,6 @@ const IndexPage = () => (
         When I'm not working, I love listening to and playing music, being outdoors, and watching hockey.
       </p>
     </div>
-    <div id="projects">
-      
-    </div>
   </Layout>
 )
 
