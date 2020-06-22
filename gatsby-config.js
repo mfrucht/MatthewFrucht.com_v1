@@ -6,6 +6,16 @@ module.exports = {
     url: "https://www.matthewfrucht.com",
   },
   plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "spreadsheet",
+        fieldName: "books",
+        // Url to query from
+        url: "https://spreadsheets.google.com/feeds/list/1jnx-EtvvW5ex7ZyZQ2RwMChqX7-lvpEHQl3lMZGW5qI/od6/public/values?alt=json",
+      },
+    },
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
