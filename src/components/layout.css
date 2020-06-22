@@ -631,9 +631,9 @@ pre tt:after {
 
   #headshot {
     float:left;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 210px;
+    /* height: 200px; */
+    border-radius: 5%;
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
     /* -webkit-transition: .3s ease-in-out; */
@@ -717,4 +717,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.interestList {
+  display: list-item;
 }

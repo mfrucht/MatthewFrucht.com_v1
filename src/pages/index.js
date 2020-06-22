@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import headshot from "../images/HeadShot.jpg"
 import SEO from "../components/seo"
+import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
@@ -10,12 +11,18 @@ const IndexPage = () => (
     <div id="aboutMe">
       <img src={headshot} draggable="false" id="headshot" alt="Matthew Frucht"/>
       <p className="mainP" style={{lineHeight:`1.6`}}>
-        Hi! My name is Matthew Frucht. I'm a junior at Cornell University studying
-        Information Science. Last summer, I worked as a research assistant in Dr. Susan Fussell's
-        Communication and Collaborative Technologies Lab here at Cornell.
+        Hi! My name is Matthew Frucht. I'm a rising senior at Cornell University studying
+        Information Science. I am incredibly interested in the sociological and psychological
+        effects of technology, especially how social technologies shape community building.
         <br/>
         <br/>
-        When I'm not working, I love listening to and playing music, being outdoors, and watching hockey.
+        When I'm not working, I love:
+        <ul>
+          <li class="interestList"><Link to="/books/">Reading</Link></li>
+          <li class="interestList">Hiking</li>
+          <li class="interestList">Listening to and playing music</li>
+          <li class="interestList">Watching hockey</li>
+        </ul>
       </p>
     </div>
   </Layout>
