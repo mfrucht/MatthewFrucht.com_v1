@@ -2,7 +2,7 @@ import React, { useState, useEffect, Component } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import bookTable from "../components/book-table"
+import Table from "../components/table"
 import { Link } from "gatsby"
 
 // getBooks {
@@ -44,22 +44,21 @@ class BooksPage extends React.Component {
     fetch('https://spreadsheets.google.com/feeds/list/1jnx-EtvvW5ex7ZyZQ2RwMChqX7-lvpEHQl3lMZGW5qI/od6/public/values?alt=json')
         .then(response => {return response.json()})
         .then((data) => {
-          // console.log(data)
             this.setState ({
               loading: false,
-              bookData: 
+              bookData:
                 data.feed.entry.map((x) => ({
-                  title: x.gsx$title,
-                  author: x.gsx$author,
-                  yearRead: x.gsx$yearRead,
-                  notes: x.gsx$notes
-                }))
+                  title: x.gsx$title.$t,
+                  author: x.gsx$author.$t,
+                  yearRead: x.gsx$yearread.$t,
+                  notes: x.gsx$notes.$t
+                } ))
             })
          })
   }
   
   render() {
-    const{ data } = this.props
+    // const{ data } = this.props
     const { loading, bookData } = this.state
     
     return( 
@@ -74,9 +73,7 @@ class BooksPage extends React.Component {
      {loading ? (
         <p>Loading ...</p>
       ) : (
-        bookData.map( book => (
-          <p key={book.title}>{book.title}</p>
-        ))
+        <Table data={bookData}></Table>
       )}
       </Layout>
 
