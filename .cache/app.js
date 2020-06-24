@@ -1,24 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import domReady from "@mikaelkristiansson/domready"
-import io from "socket.io-client"
 
 import socketIo from "./socketIo"
 import emitter from "./emitter"
 import { apiRunner, apiRunnerAsync } from "./api-runner-browser"
-import { setLoader, publicLoader } from "./loader"
-import DevLoader from "./dev-loader"
+import loader, { setApiRunnerForLoader } from "./loader"
 import syncRequires from "./sync-requires"
-// Generated during bootstrap
 import matchPaths from "./match-paths.json"
 
 window.___emitter = emitter
-
-const loader = new DevLoader(syncRequires, matchPaths)
-setLoader(loader)
-loader.setApiRunner(apiRunner)
-
-window.___loader = publicLoader
+setApiRunnerForLoader(apiRunner)
 
 // Let the site/plugins run code very early.
 apiRunnerAsync(`onClientEntry`).then(() => {
@@ -29,32 +21,6 @@ apiRunnerAsync(`onClientEntry`).then(() => {
       window.location.reload()
     })
   }
-
-  fetch(`/___services`)
-    .then(res => res.json())
-    .then(services => {
-      if (services.developstatusserver) {
-        const parentSocket = io(
-          `http://${window.location.hostname}:${services.developstatusserver.port}`
-        )
-
-        parentSocket.on(`develop:needs-restart`, msg => {
-          if (
-            window.confirm(
-              `The develop process needs to be restarted for the changes to ${msg.dirtyFile} to be applied.\nDo you want to restart the develop process now?`
-            )
-          ) {
-            parentSocket.once(`develop:is-starting`, msg => {
-              window.location.reload()
-            })
-            parentSocket.once(`develop:started`, msg => {
-              window.location.reload()
-            })
-            parentSocket.emit(`develop:restart`)
-          }
-        })
-      }
-    })
 
   /**
    * Service Workers are persistent by nature. They stick around,
@@ -83,6 +49,8 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     ReactDOM.render
   )[0]
 
+  loader.addDevRequires(syncRequires)
+  loader.addMatchPaths(matchPaths)
   Promise.all([
     loader.loadPage(`/dev-404-page/`),
     loader.loadPage(`/404.html`),

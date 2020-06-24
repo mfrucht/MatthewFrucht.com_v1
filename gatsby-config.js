@@ -6,7 +6,6 @@ module.exports = {
     url: "https://www.matthewfrucht.com",
   },
   plugins: [
-    
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
