@@ -417,12 +417,11 @@ var _default = (pagePath, callback) => {
 
   const bodyScripts = scripts.filter(s => s.rel !== `prefetch`).map(s => {
     const scriptPath = `${__PATH_PREFIX__}/${JSON.stringify(s.name).slice(1, -1)}`;
-    return (/*#__PURE__*/React.createElement("script", {
-        key: scriptPath,
-        src: scriptPath,
-        async: true
-      })
-    );
+    return /*#__PURE__*/React.createElement("script", {
+      key: scriptPath,
+      src: scriptPath,
+      async: true
+    });
   });
   postBodyComponents.push(...bodyScripts);
   apiRunner(`onPreRenderHTML`, {
