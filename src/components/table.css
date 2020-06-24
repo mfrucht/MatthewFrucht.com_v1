@@ -2,8 +2,21 @@
 tbody {color:blue;} */
 table, th, td {
     border: 1px solid black;
-   }
-   td, th{
+}
+
+
+td, th{
     padding: 5px;
-   }
-   
+    font-size: 12pt;
+    text-align:center;
+}
+
+td:first-child {
+    width:20%
+}
+td:nth-child(2) {
+    width:20%
+}
+td:nth-child(3) {
+    width:10%
+}
