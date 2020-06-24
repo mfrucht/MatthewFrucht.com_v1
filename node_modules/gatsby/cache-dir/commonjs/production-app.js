@@ -67,27 +67,26 @@ window.___loader = _loader.publicLoader;
       const {
         location
       } = this.props;
-      return (/*#__PURE__*/_react.default.createElement(_ensureResources.default, {
-          location: location
-        }, ({
-          pageResources,
-          location
-        }) => /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
-          location: location
-        }, /*#__PURE__*/_react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
-          location: location,
-          shouldUpdateScroll: _navigation.shouldUpdateScroll
-        }, /*#__PURE__*/_react.default.createElement(_router.Router, {
-          basepath: __BASE_PATH__,
-          location: location,
-          id: "gatsby-focus-wrapper"
-        }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
-          path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
-        }, this.props, {
-          location: location,
-          pageResources: pageResources
-        }, pageResources.json))))))
-      );
+      return /*#__PURE__*/_react.default.createElement(_ensureResources.default, {
+        location: location
+      }, ({
+        pageResources,
+        location
+      }) => /*#__PURE__*/_react.default.createElement(_navigation.RouteUpdates, {
+        location: location
+      }, /*#__PURE__*/_react.default.createElement(_gatsbyReactRouterScroll.ScrollContext, {
+        location: location,
+        shouldUpdateScroll: _navigation.shouldUpdateScroll
+      }, /*#__PURE__*/_react.default.createElement(_router.Router, {
+        basepath: __BASE_PATH__,
+        location: location,
+        id: "gatsby-focus-wrapper"
+      }, /*#__PURE__*/_react.default.createElement(RouteHandler, (0, _extends2.default)({
+        path: pageResources.page.path === `/404.html` ? (0, _stripPrefix.default)(location.pathname, __BASE_PATH__) : encodeURI(pageResources.page.matchPath || pageResources.page.path)
+      }, this.props, {
+        location: location,
+        pageResources: pageResources
+      }, pageResources.json))))));
     }
 
   }

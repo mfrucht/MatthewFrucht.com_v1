@@ -18,11 +18,10 @@ const DevPageRenderer = ({
 }) => {
   const pageResources = _loader.default.loadPageSync(location.pathname);
 
-  return (/*#__PURE__*/_react.default.createElement(_queryResultStore.PageQueryStore, {
-      location,
-      pageResources
-    })
-  );
+  return /*#__PURE__*/_react.default.createElement(_queryResultStore.PageQueryStore, {
+    location,
+    pageResources
+  });
 };
 
 DevPageRenderer.propTypes = {
