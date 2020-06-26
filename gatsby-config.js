@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Matthew Frucht`,
-    description: `I am an Information Science Junior at Cornell University.`,
+    description: `I am a Rising Senior studying Information Science at Cornell University.`,
     author: "Matthew Frucht",
     url: "https://www.matthewfrucht.com",
   },
