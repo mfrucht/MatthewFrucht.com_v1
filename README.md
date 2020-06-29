@@ -1,3 +1,3 @@
-## The first version of my website.
+## The first version of my personal website.
 
-We will see where this goes.
+[matthewfrucht.com](https://www.matthewfrucht.com)
