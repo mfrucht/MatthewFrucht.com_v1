@@ -30,20 +30,20 @@ export default class Table extends React.Component {
       })
    }
    
-render() {
-   return (
-   <div>
-      <table>
-         <thead>
-            <tr>{this.getHeader()}</tr>
-         </thead>
-         <tbody>
-            {this.getRowsData()}
-         </tbody>
-      </table>
-   </div>
-   
-   );
+   render() {
+      return (
+      <div>
+         <table>
+            <thead>
+               <tr>{this.getHeader()}</tr>
+            </thead>
+            <tbody>
+               {this.getRowsData()}
+            </tbody>
+         </table>
+      </div>
+      
+      );
    }
 }
 

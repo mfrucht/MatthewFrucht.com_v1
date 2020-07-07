@@ -69,6 +69,9 @@ class BooksPage extends React.Component {
       <br/>
         This is a little spreadsheet of the books that I've read since starting this
         page in Spring 2020.
+        <br/>
+        As if my to-read list isn't long enough alraedy, I'll take book recommendations
+        sent to <a href="mailto:msf239@cornell.edu">msf239@cornell.edu</a>!
       </p>
      {loading ? (
         <p>Loading ...</p>
