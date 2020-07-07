@@ -42,9 +42,6 @@ const MOCK_FILE_INFO = {
     path: `/about/`,
     webpackCompilationHash: `1234567890abcdef1234`,
   }),
-  [join(process.cwd(), `/public/page-data/app-data.json`)]: JSON.stringify({
-    webpackCompilationHash: `1234567890abcdef1234`,
-  }),
 }
 
 let StaticEntry
@@ -79,7 +76,6 @@ const checkSanitized = components => {
   expect(
     components.find(val => Array.isArray(val) && val.length === 0)
   ).toBeFalsy()
-  expect(components.find(val => Array.isArray(val))).toBeFalsy()
 }
 
 const checkNonEmptyHeadersPlugin = {
@@ -169,33 +165,12 @@ describe(`develop-static-entry`, () => {
       done()
     })
   })
-
-  test(`onPreRenderHTML adds metatag note for development environment`, done => {
-    DevelopStaticEntry(`/about/`, (_, html) => {
-      expect(html).toContain(
-        `<meta name="note" content="environment=development"/>`
-      )
-      done()
-    })
-  })
-
-  test(`onPreRenderHTML adds metatag note for development environment after replaceHeadComponents`, done => {
-    global.plugins = [reverseHeadersPlugin]
-
-    DevelopStaticEntry(`/about/`, (_, html) => {
-      expect(html).toContain(
-        `<meta name="note" content="environment=development"/>`
-      )
-      done()
-    })
-  })
 })
 
 describe(`static-entry sanity checks`, () => {
   beforeEach(() => {
     global.__PATH_PREFIX__ = ``
     global.__BASE_PATH__ = ``
-    global.__ASSET_PREFIX__ = ``
   })
 
   const methodsToCheck = [
@@ -243,20 +218,6 @@ describe(`static-entry sanity checks`, () => {
         done()
       })
     })
-
-    test(`${methodName} can flatten arrays`, done => {
-      const plugin = injectValuePlugin(`onPreRenderHTML`, methodName, [
-        <style key="style1"> .style1 {} </style>,
-        <style key="style2"> .style2 {} </style>,
-        <style key="style3"> .style3 {} </style>,
-        [<style key="style4"> .style3 {} </style>],
-      ])
-      global.plugins = [plugin, checkNonEmptyHeadersPlugin]
-
-      StaticEntry(`/about/`, (_, html) => {
-        done()
-      })
-    })
   })
 })
 
@@ -264,7 +225,6 @@ describe(`static-entry`, () => {
   beforeEach(() => {
     global.__PATH_PREFIX__ = ``
     global.__BASE_PATH__ = ``
-    fs.readFileSync.mockImplementation(file => MOCK_FILE_INFO[file])
   })
 
   test(`onPreRenderHTML can be used to replace headComponents`, done => {
@@ -298,38 +258,5 @@ describe(`static-entry`, () => {
       expect(html).toMatchSnapshot()
       done()
     })
-  })
-
-  test(`onPreRenderHTML does not add metatag note for development environment`, done => {
-    StaticEntry(`/about/`, (_, html) => {
-      expect(html).not.toContain(
-        `<meta name="note" content="environment=development"/>`
-      )
-      done()
-    })
-  })
-})
-
-describe(`sanitizeComponents`, () => {
-  let sanitizeComponents
-
-  beforeEach(() => {
-    fs.readFileSync.mockImplementation(file => MOCK_FILE_INFO[file])
-    sanitizeComponents = require(`../static-entry`).sanitizeComponents
-  })
-
-  it(`strips assetPrefix for manifest link`, () => {
-    global.__PATH_PREFIX__ = `https://gatsbyjs.org/blog`
-    global.__BASE_PATH__ = `/blog`
-    global.__ASSET_PREFIX__ = `https://gatsbyjs.org`
-
-    const sanitizedComponents = sanitizeComponents([
-      <link
-        key="manifest"
-        rel="manifest"
-        href="https://gatsbyjs.org/blog/manifest.webmanifest"
-      />,
-    ])
-    expect(sanitizedComponents[0].props.href).toBe(`/blog/manifest.webmanifest`)
   })
 })
