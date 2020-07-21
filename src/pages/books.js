@@ -5,31 +5,6 @@ import SEO from "../components/seo"
 import Table from "../components/table"
 import { Link } from "gatsby"
 
-// getBooks {
-//   fetch("https://spreadsheets.google.com/feeds/list/1jnx-EtvvW5ex7ZyZQ2RwMChqX7-lvpEHQl3lMZGW5qI/od6/public/values?alt=json")
-//       // headers: {
-//       //   'content-type': 'applications/json',
-//       // },
-//       // body: JSON.stringify(data),
-//       // })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//     })
-// }
-
-// createTable() {
-//   fetch("https://spreadsheets.google.com/feeds/list/1jnx-EtvvW5ex7ZyZQ2RwMChqX7-lvpEHQl3lMZGW5qI/od6/public/values?alt=json", {
-//     headers: {
-//       'content-type': 'applications/json',
-//     },
-//     body: JSON.stringify(data),
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//     })
-// }
 
 class BooksPage extends React.Component {
 
