@@ -647,11 +647,12 @@ pre tt:after {
   width: 400px;
   float: right;
   font-size: 12pt;
-  text-align: left;
+  text-align: justify;
 }
 
 .booksP {
-  width: 800px;
+  object-position: center center;
+  max-width: 800px;
   margin: auto;
   font-size: 12pt;
   text-align: justify;
