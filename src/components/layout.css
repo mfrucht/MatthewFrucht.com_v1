@@ -629,7 +629,7 @@ pre tt:after {
 }
 
 #headshot {
-  float: left;
+  /* float: left; */
   width: 210px;
   /* height: 200px; */
   border-radius: 5%;

@@ -11,7 +11,7 @@ const IndexPage = () => (
     <div id="aboutMe">
       <img src={headshot} draggable="false" id="headshot" alt="Matthew Frucht"/>
       <p className="mainP" style={{lineHeight:`1.6`}}>
-        Hi! My name is Matthew Frucht. I'm a rising senior at Cornell University studying
+        Hi! My name is Matthew Frucht. I'm a recent graduate of Cornell University, where I studied
         Information Science. I am incredibly interested in the sociological and psychological
         effects of technology, especially how social technologies shape community building.
         <br/>
