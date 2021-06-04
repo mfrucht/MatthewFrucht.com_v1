@@ -44,9 +44,8 @@ class BooksPage extends React.Component {
         Hi there! I started this page in Spring 2020 to log my reading (and 
         to learn how to load data from a Google Sheets spreadsheet). It was a fun
         little experiment, but I'm going to stop updating this page. I'm doing this
-        for the same reason that I'm going to stop using Goodreads; I don't 
-        particularly like publishing the books that I'm reading, as it creates this
-        sort of "reading for an audience" mindset that I don't like. Every time
+        because I don't particularly like publishing the books that I'm reading, 
+        as it creates this sort of "reading for an audience" mindset. Every time
         I'd pick up a title, I would subconsciously thing <i>what are people going to think of
         me reading this book?</i> 
 
@@ -59,7 +58,7 @@ class BooksPage extends React.Component {
         list to show "not completed" or to have to remove books from the list.
         But I see nothing wrong with abandoning books! books are not contracts, and I 
         shouldn't have to waste my time finishing a book I dislike simply to check
-        it off as completed. Perhaps that's not the most virtuous view of, but as
+        it off as completed. Perhaps that's not the most virtuous view, but as
         I said, I read only for my own enjoyment.
         <br/>
         <br/>
