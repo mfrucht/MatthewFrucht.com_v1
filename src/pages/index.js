@@ -11,17 +11,16 @@ const IndexPage = () => (
     <div id="aboutMe">
       <img src={headshot} draggable="false" id="headshot" alt="Matthew Frucht"/>
       <p className="mainP" style={{lineHeight:`1.6`}}>
-        Hi! My name is Matthew Frucht. I'm a recent graduate of Cornell University, where I studied
-        Information Science. I am incredibly interested in the sociological and psychological
-        effects of technology, especially how social technologies shape community building.
+        Hi! My name is Matthew Frucht. I'm a Software Engineer at Microsoft. I am incredibly interested in the sociological and psychological
+        effects of technology, especially how social technologies shape community building. I am in the process of redoing this website! 
         <br/>
         <br/>
-        When I'm not working, I love:
+        When I'm not working, I enjoy:
         <ul>
-          <li class="interestList"><Link to="/books/">Reading</Link></li>
+          <li class="interestList">Reading</li>
           <li class="interestList">Hiking</li>
           <li class="interestList">Listening to and playing music</li>
-          <li class="interestList">Watching hockey</li>
+          <li class="interestList">Soccer</li>
         </ul>
       </p>
     </div>
